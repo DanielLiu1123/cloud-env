@@ -1,8 +1,8 @@
 # Spring-Cloud 最新最稳定版本各组件的使用demo
 ***
 ***version:***
-> - Spring boot             2.4.2
-> - Spring Cloud            2020.0.2
+> - Spring boot             2.4.2       [2.4.x版本新特性](https://github.com/spring-projects/spring-boot/wiki/Spring-Boot-2.4-Release-Notes)
+> - Spring Cloud            2020.0.2    [2020.0.x版本新特性](https://github.com/spring-cloud/spring-cloud-release/wiki/Spring-Cloud-2020.0-Release-Notes)
 > - Spring Cloud Alibaba    2021.1
 > - Sharding Jdbc           4.1.1
 > - Seata                   1.3.0 (官方推荐)
