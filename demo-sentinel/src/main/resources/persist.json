@@ -1,0 +1,22 @@
+{
+  // 资源名
+  "resource": "/test",
+  // 针对来源，若为 default 则不区分调用来源
+  "limitApp": "default",
+  // 限流阈值类型(1:QPS;0:并发线程数）
+  "grade": 1,
+  // 阈值
+  "count": 1,
+  // 是否是集群模式
+  "clusterMode": false,
+  // 流控效果(0:快速失败;1:Warm Up(预热模式);2:排队等待)
+  "controlBehavior": 0,
+  // 流控模式(0:直接；1:关联;2:链路)
+  "strategy": 0,
+  // 预热时间（秒，预热模式需要此参数）
+  "warmUpPeriodSec": 10,
+  // 超时时间（排队等待模式需要此参数）
+  "maxQueueingTimeMs": 500,
+  // 关联资源、入口资源(关联、链路模式)
+  "refResource": "rrr"
+}

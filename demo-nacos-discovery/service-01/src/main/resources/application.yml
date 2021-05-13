@@ -1,0 +1,10 @@
+server:
+  port: 8003
+spring:
+  application:
+    name: service-one
+  cloud:
+    nacos:
+      server-addr: localhost:8848
+      discovery:
+        weight: 2.0

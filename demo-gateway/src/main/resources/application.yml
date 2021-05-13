@@ -1,0 +1,70 @@
+server:
+  port: 12000
+
+spring:
+  application:
+    name: demo-gateway
+  cloud:
+    # nacos
+    nacos:
+      server-addr: localhost:8848
+    # gateway
+    gateway:
+      discovery:
+        locator:
+          enabled: true
+      routes:
+        # =====================================================
+        # 自定义lb策略
+        # =====================================================
+        - id: custom_lb
+#          uri: http://localhost:8001
+          uri: lb://service-one
+          predicates:
+            - Path=/lb/**
+          filters:
+            - RewritePath=/lb/?(?<segment>.*), /$\{segment}
+#            - StripPrefix=1
+
+        # =====================================================
+        # 按权重路由 8比2
+        # =====================================================
+        - id: weight_high
+          uri: lb://service-one
+          predicates:
+            - Path=/weight/**
+            - Weight=group1, 8
+          filters:
+            - RewritePath=/weight/?(?<segment>.*), /$\{segment}
+        - id: weight_low
+          uri: lb://service-two
+          predicates:
+            - Path=/weight/**
+            - Weight=group1, 2
+          filters:
+            - RewritePath=/weight/?(?<segment>.*), /$\{segment}
+
+#      routes:
+#        - id: route_user # 路由的id,没有规定规则但要求唯一,建议配合服务名
+#          #匹配后提供服务的路由地址
+#          uri: lb://mealhelper-user
+#          predicates:
+#            - Path=/api/user/** # 断言，路径相匹配的进行路由
+#            #- After=2017-01-20T17:42:47.789-07:00[America/Denver]
+#            #- Before=2017-01-20T17:42:47.789-07:00[America/Denver]
+#            #- Cookie=username,zzyy
+#            #- Header=X-Request-Id, \d+ #请求头要有X-Request-Id属性，并且值为正数
+#            #- Host=**.atguigu.com
+#            #- Method=GET
+#            #- Query=username, \d+ # 要有参数名username并且值还要是正整数才能路由
+#          # 过滤
+#          #filters:
+#          #  - AddRequestHeader=X-Request-red, blue
+#          # 这将/mypath作为所有匹配请求的路径的前缀。因此，请求/hello将被发送到/mypath/hello
+#          #  - PrefixPath=/mypath
+#          # 通过到的网关/name/blue/red发出请求时，将被发送到/red
+#          #  - StripPrefix=2
+#          # 设置请求大小 单位 KB, MB, B
+#          #  - name: RequestSize
+#          #    args:
+#          #      maxSize: 5MB

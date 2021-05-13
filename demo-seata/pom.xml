@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <packaging>pom</packaging>
+    <parent>
+        <groupId>cn.liumouren.example</groupId>
+        <artifactId>cloud-env</artifactId>
+        <version>${revision}</version>
+    </parent>
+
+    <modules>
+        <module>seata-pure</module>
+        <module>seata-sharding-jdbc</module>
+    </modules>
+
+    <artifactId>demo-seata</artifactId>
+    <description>seata demo</description>
+
+    <properties>
+        <java.version>8</java.version>
+    </properties>
+
+</project>

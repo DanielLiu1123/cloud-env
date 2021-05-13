@@ -1,0 +1,27 @@
+server:
+  port: 8001
+spring:
+  application:
+    name: sentinel
+  cloud:
+    # nacos
+    nacos:
+      discovery:
+        # Nacos服务注册中心地址
+        server-addr: localhost:8848
+    # sentinel
+    sentinel:
+      transport:
+        # sentinel dashboard 地址
+        dashboard: localhost:8080
+        # 默认为8719，如果被占用会自动+1，直到找到为止
+        port: 8719
+      # 流控规则持久化到nacos
+      datasource:
+        ds-flow:
+          nacos:
+            server-addr: localhost:8848
+            data-id: flow-rule
+            group-id: DEFAULT_GROUP
+            data-type: json
+            rule-type: flow
