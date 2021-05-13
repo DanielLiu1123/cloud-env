@@ -1,5 +1,15 @@
 # Spring-Cloud 最新最稳定版本各组件的使用demo
-
+***
+***version:***
+> - Spring boot             2.4.2
+> - Spring Cloud            2020.0.2
+> - Spring Cloud Alibaba    2021.1
+> - Sharding Jdbc           4.1.1
+> - Seata                   1.3.0 (官方推荐)
+> - Nacos                   1.4.1 (官方推荐)
+> - Sentinel                1.8.0 (官方推荐)
+> - [查看版本说明](https://github.com/alibaba/spring-cloud-alibaba/wiki/%E7%89%88%E6%9C%AC%E8%AF%B4%E6%98%8E)
+***
 ***包含:***
 > - nacos(配置中心,注册中心)
 >>  - 作为配置中心
