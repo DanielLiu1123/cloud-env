@@ -8,7 +8,6 @@ import org.springframework.web.bind.annotation.PathVariable;
  * 不再支持hystrix,ribbon
  * 因此 熔断器选择 sentinel
  * 负载均衡策略选择 loadbalancer
- * fallback配置无效
  *
  * @author Daniel Liu
  */
