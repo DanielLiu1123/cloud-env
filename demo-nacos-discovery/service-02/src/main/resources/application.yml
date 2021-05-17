@@ -6,3 +6,12 @@ spring:
   cloud:
     nacos:
       server-addr: localhost:8848
+    # sentinel
+    sentinel:
+      eager: true
+      transport:
+        dashboard: localhost:8080
+# 使用sentinel作为断路器
+feign:
+  sentinel:
+    enabled: true

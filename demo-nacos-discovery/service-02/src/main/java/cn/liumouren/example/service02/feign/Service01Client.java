@@ -1,5 +1,7 @@
 package cn.liumouren.example.service02.feign;
 
+import cn.liumouren.example.service02.feign.fallback.Fallback;
+import cn.liumouren.example.service02.feign.fallback.FallbackConfig;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -8,11 +10,13 @@ import org.springframework.web.bind.annotation.PathVariable;
  * 不再支持hystrix,ribbon
  * 因此 熔断器选择 sentinel
  * 负载均衡策略选择 loadbalancer
- * fallback配置无效
  *
  * @author Daniel Liu
  */
-@FeignClient(name = "service-one"/*, fallback = Fallback.class*/, path = "/serviceOne")
+@FeignClient(name = "service-one",
+        configuration = FallbackConfig.class,
+        fallback = Fallback.class,
+        path = "/serviceOne")
 public interface Service01Client {
 
     /**
