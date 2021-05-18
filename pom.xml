@@ -17,6 +17,7 @@
         <module>demo-gateway</module>
         <module>demo-nacos-discovery</module>
         <module>cloud-common</module>
+        <module>demo-security</module>
     </modules>
 
     <properties>
