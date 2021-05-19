@@ -34,11 +34,11 @@ public class UserDetailsServiceImpl implements UserDetailsService {
             // 不能 return null
             throw new UsernameNotFoundException("username not found");
         }
-        String[] authorities = user.getAuthorities().split(",");
-        Set<GrantedAuthority> set = new HashSet<>();
-        for (String authority : authorities) {
-            set.add(new SimpleGrantedAuthority(authority));
+        String[] authoritiesArr = user.getAuthorities().split(",");
+        Set<GrantedAuthority> authorities = new HashSet<>();
+        for (String authority : authoritiesArr) {
+            authorities.add(new SimpleGrantedAuthority(authority));
         }
-        return new org.springframework.security.core.userdetails.User(user.getUsername(), user.getPassword(), set);
+        return new org.springframework.security.core.userdetails.User(user.getUsername(), user.getPassword(), authorities);
     }
 }

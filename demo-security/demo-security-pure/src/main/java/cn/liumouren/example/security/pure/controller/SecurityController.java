@@ -44,6 +44,9 @@ public class SecurityController {
         return "add user ok!";
     }
 
+    /**
+     * 登陆成功跳转页面
+     */
     @PostMapping("/index")
     public String index() {
         return "index";
