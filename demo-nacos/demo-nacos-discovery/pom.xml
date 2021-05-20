@@ -6,7 +6,7 @@
     <packaging>pom</packaging>
     <parent>
         <groupId>cn.liumouren.example</groupId>
-        <artifactId>cloud-env</artifactId>
+        <artifactId>demo-nacos</artifactId>
         <version>${revision}</version>
     </parent>
 

@@ -11,13 +11,12 @@
     <description>父工程,统一管理jar包版本</description>
 
     <modules>
-        <module>demo-sentinel</module>
-        <module>demo-seata</module>
-        <module>demo-nacos-config</module>
-        <module>demo-gateway</module>
-        <module>demo-nacos-discovery</module>
         <module>cloud-common</module>
+        <module>demo-gateway</module>
+        <module>demo-nacos</module>
+        <module>demo-seata</module>
         <module>demo-security</module>
+        <module>demo-sentinel</module>
     </modules>
 
     <properties>
