@@ -1,8 +1,8 @@
 server:
-  port: 8000
+  port: 9000
 spring:
   application:
-    name: oauth2-resource-server
+    name: oauth2-authorization-server
 
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
