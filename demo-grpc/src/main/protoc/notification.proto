@@ -1,0 +1,25 @@
+syntax = "proto3";
+
+option java_multiple_files = true;
+option java_package = "io.grpc.examples.notice";
+option java_outer_classname = "notification";
+
+package notice;
+
+// The notice service definition.
+service Notice {
+  // 通知订阅者
+  rpc NoticeSubscriber (stream AddRequest) returns (stream Reply) {}
+  // 订阅
+  rpc Subscript (stream AddRequest) returns (stream Reply) {}
+}
+
+// The request message containing the  name.
+message AddRequest {
+  string name = 1;
+}
+
+// The response message containing the reply message
+message Reply {
+  string message = 1;
+}
