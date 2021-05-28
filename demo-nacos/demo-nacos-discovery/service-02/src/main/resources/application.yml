@@ -15,3 +15,9 @@ spring:
 feign:
   sentinel:
     enabled: true
+
+logging:
+  level:
+    com.alibaba.cloud.nacos.discovery: debug
+    org.springframework.cloud.openfeign: debug
+    feign: debug

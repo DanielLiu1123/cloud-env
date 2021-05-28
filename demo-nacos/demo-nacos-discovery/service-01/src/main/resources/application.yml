@@ -1,5 +1,5 @@
 server:
-  port: 8003
+  port: 8001
 spring:
   application:
     name: service-one
@@ -8,3 +8,6 @@ spring:
       server-addr: localhost:8848
       discovery:
         weight: 2.0
+logging:
+  level:
+    com.alibaba.cloud.nacos.discovery: debug

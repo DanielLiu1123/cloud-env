@@ -10,10 +10,10 @@
     </parent>
 
     <artifactId>demo-grpc</artifactId>
+    <description>grpc使用demo</description>
 
     <properties>
         <java.version>8</java.version>
-
     </properties>
 
     <dependencies>

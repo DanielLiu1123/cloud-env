@@ -2,6 +2,9 @@ package cn.liumouren.example.security.pure.controller;
 
 import cn.liumouren.example.security.pure.dao.UserDao;
 import cn.liumouren.example.security.pure.entity.User;
+import cn.liumouren.example.security.pure.listener.EnterEvent;
+import cn.liumouren.example.security.pure.listener.EnterEventPublisher;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -49,7 +52,11 @@ public class SecurityController {
      */
     @PostMapping("/index")
     public String index() {
+        publisher.publish(new EnterEvent("进入index"));
         return "index";
     }
+
+    @Autowired
+    private EnterEventPublisher publisher;
 
 }
