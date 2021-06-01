@@ -8,3 +8,10 @@ spring:
     url: jdbc:mysql://127.0.0.1:3307/spring_security?useUnicode=true&characterEncoding=UTF-8&useSSL=false&serverTimezone=Asia/Shanghai
     username: root
     password: llw1123
+
+logging:
+  level:
+    org:
+      springframework:
+        beans:
+          factory: trace
