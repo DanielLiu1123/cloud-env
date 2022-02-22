@@ -22,7 +22,8 @@ public class AccountServiceImpl extends ServiceImpl<AccountDao, Account> impleme
         super.update(new LambdaUpdateWrapper<Account>()
                 .eq(Account::getUserId, userId)
                 .setSql("`money` = `money` - " + money));
-//        int i = 1 / 0;
+        // mock exception
+        int i = 1 / 0;
     }
 
 }

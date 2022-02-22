@@ -5,9 +5,4 @@ spring:
     name: service-one
   cloud:
     nacos:
-      server-addr: localhost:8848
-      discovery:
-        weight: 2.0
-logging:
-  level:
-    com.alibaba.cloud.nacos.discovery: debug
+      server-addr: 127.0.0.1:8848

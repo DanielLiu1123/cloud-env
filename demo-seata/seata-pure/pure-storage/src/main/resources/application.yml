@@ -5,12 +5,13 @@ spring:
     name: seata-client-storage
   cloud:
     nacos:
-      server-addr: localhost:8848
+      discovery:
+        server-addr: 127.0.0.1:8848
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://127.0.0.1:3307/seata?useUnicode=true&characterEncoding=UTF-8&useSSL=false&serverTimezone=Asia/Shanghai
+    url: jdbc:mysql://127.0.0.1:3306/seata?useUnicode=true&characterEncoding=UTF-8&useSSL=false&serverTimezone=Asia/Shanghai
     username: root
-    password: llw1123
+    password: llw1123..
   # 引入配置文件
   config:
     import: classpath:application-seata.yml
