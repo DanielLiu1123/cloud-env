@@ -15,7 +15,7 @@ import javax.servlet.http.HttpServletRequest;
 @RefreshScope
 public class ConfigController {
 
-    @Value("${dev.name}")
+    @Value("${dev.name:}")
     private String name;
 
     @GetMapping
